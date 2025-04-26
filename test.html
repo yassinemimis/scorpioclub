@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scorpio Club Timeline</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    body {
+      background: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00ffd5;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: linear-gradient(to bottom, #00ffd5, #007bff);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .event {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      background: linear-gradient(130deg, #231a6f, #0f054c);
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #00ffd5;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .event.left {
+      left: -10px;
+      text-align: right;
+    }
+
+    .event.right {
+      left: 51%;
+      text-align: left;
+    }
+
+    .event::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  background: #00ffd5;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ffd5, 0 0 30px #00ffd5;
+  z-index: 1;
+}
+
+
+    .event.left::before {
+      right: -10px;
+    }
+
+    .event.right::before {
+      left: -10px;
+    }
+
+    .event h3 {
+      margin: 0;
+      color: #00ffd5;
+      font-size: 1.4em;
+    }
+
+    .event p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .event {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 30px;
+      }
+
+      .timeline::after {
+        left: 20px;
+      }
+
+      .event::before {
+        left: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🧠 Scorpio Club Timeline</h2>
+
+  <div class="timeline">
+    <div class="event left">
+      <h3>WELCOME DAY (2023)</h3>
+      <p>Club presentation and hacking demos like WiFi, SSLStrip, USB Malware.</p>
+    </div>
+
+    <div class="event right">
+      <h3>PROJECT X SHOWCASE (2024)</h3>
+      <p>Student projects presented to university leadership with Q&A sessions.</p>
+    </div>
+
+    <div class="event left">
+      <h3>Workshop Flutter</h3>
+      <p>Introduction to mobile app development with Flutter and Dart.</p>
+    </div>
+
+    <div class="event right">
+      <h3>Machine Learning Training</h3>
+      <p>Held in partnership with Dahlias Institute, led by a US-based expert.</p>
+    </div>
+
+    <div class="event left">
+      <h3>ALGERIA 2.0 Participation</h3>
+      <p>Representation at the international IT security conference in Algiers.</p>
+    </div>
+  </div>
+
+</body>
+</html>
