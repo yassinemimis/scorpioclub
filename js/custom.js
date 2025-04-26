@@ -80,4 +80,18 @@ window.addEventListener('DOMContentLoaded', function() {
     // تعيين فترة زمنية لعرض كل مجموعة بشكل لانهائي
     const interval = setInterval(showGroupMembers, 5000); // 5000 ميلي ثانية (5 ثواني)
   });
-  
+  const scriptURL =                       
+  "https://script.google.com/macros/s/AKfycbyuz5KrsfDveeSguHPQUyY2awF9iKS4kuTF4dIy2CC-QR8fSXDgT9SLkavyLbvdX5Fg6Q/exec";
+  const form = document.forms["subscribeForm"];
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var formData = new FormData(form);
+
+    fetch(scriptURL, { method: "POST", body: formData })
+      .then((response) => {
+        swal("Done", "Submitted Successfully.", "success");
+      })
+      .catch((error) => {
+        swal("Error", "Something went wrong. please try again!", "error");
+      });
+  });
