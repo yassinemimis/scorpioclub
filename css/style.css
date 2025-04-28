@@ -1006,19 +1006,19 @@ z-index: 1;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  display: none; /* إخفاء العناصر في البداية */
+  display: none;
 }
 
 .team_section .box.visible {
   opacity: 1;
   transform: translateY(0);
-  display: block; /* عرض العناصر التي تم تفعيلها */
+  display: block; 
 }
 
 .team_section .box.fade-out {
   opacity: 0;
-  transform: translateY(-50px); /* يمكن تعديل هذه القيم حسب الحاجة */
-  display: block; /* تأكد من أن العنصر لا يزال موجوداً أثناء تأثير الاختفاء */
+  transform: translateY(-50px); 
+  display: block; 
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 

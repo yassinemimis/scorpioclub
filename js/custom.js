@@ -46,57 +46,55 @@ function myMap() {
 }
 window.addEventListener('DOMContentLoaded', function() {
     const teamBoxes = document.querySelectorAll('.team_section .box');
-    const groupSize = 4;  // عدد الأعضاء في كل مجموعة
+    const groupSize = 4;  
     let index = 0;
   
-    // دالة لإخفاء الأعضاء الحاليين قبل عرض المجموعة التالية
+  
     function hideMembers() {
-      // إخفاء جميع الأعضاء الذين تم عرضهم سابقاً
+   
       teamBoxes.forEach(box => {
         box.classList.remove('visible');
-        box.style.display = 'none';  // إخفاء العنصر
+        box.style.display = 'none'; 
       });
     }
   
-    // دالة لعرض الأعضاء في مجموعات
+
     function showGroupMembers() {
-      hideMembers();  // إخفاء الأعضاء الحاليين
-      const endIndex = Math.min(index + groupSize, teamBoxes.length); // التأكد من عدم تجاوز العدد الإجمالي
+      hideMembers();  
+      const endIndex = Math.min(index + groupSize, teamBoxes.length); 
       for (let i = index; i < endIndex; i++) {
         teamBoxes[i].classList.add('visible');
-        teamBoxes[i].style.display = 'block';  // عرض العنصر
+        teamBoxes[i].style.display = 'block'; 
       }
       index += groupSize;
   
-      // إذا تم عرض جميع الأعضاء، نعيد العملية من البداية
+     
       if (index >= teamBoxes.length) {
-        index = 0;  // إعادة التكرار من أول الأعضاء
+        index = 0;
       }
     }
   
-    // عرض المجموعة الأولى فور تحميل الصفحة
+ 
     showGroupMembers();
   
-    // تعيين فترة زمنية لعرض كل مجموعة بشكل لانهائي
-    const interval = setInterval(showGroupMembers, 3000); // 5000 ميلي ثانية (5 ثواني)
-  });
-  const scriptURL =                       
-  "https://script.google.com/macros/s/AKfycbyuz5KrsfDveeSguHPQUyY2awF9iKS4kuTF4dIy2CC-QR8fSXDgT9SLkavyLbvdX5Fg6Q/exec";
-  const form = document.forms["subscribeForm"];
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    var formData = new FormData(form);
 
-    fetch(scriptURL, { method: "POST", body: formData })
-      .then((response) => {
-        swal("Done", "Submitted Successfully.", "success");
-      })
-      .catch((error) => {
-        swal("Error", "Something went wrong. please try again!", "error");
-      });
+    const interval = setInterval(showGroupMembers, 3000);
   });
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxXMOG5R2sbC4jbIYPR0O_5DsrLW_YMgCPlSYux5Zja5J0dqTb-3GsYGBp123_biO_1cg/exec'
+
+  const form = document.forms['contact-form']
+  
+  form.addEventListener('submit', e => {
+    
+    e.preventDefault()
+    
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => alert("Thank you! Form is submitted" ))
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message))
+  })
   tsParticles.load("particles-js", {
-    fullScreen: { enable: false }, // نستخدمه داخل العنصر فقط مش كل الشاشة
+    fullScreen: { enable: false }, 
     background: {
       color: "transparent"
     },
@@ -122,7 +120,7 @@ window.addEventListener('DOMContentLoaded', function() {
       },
       links: {
         enable: true,
-        distance: 250, /* ⭐ زيادة المسافة لكي تكون دائما متصلة */
+        distance: 250,
         color: "#00bbf0",
         opacity: 0.3,
         width: 1
@@ -140,7 +138,7 @@ window.addEventListener('DOMContentLoaded', function() {
       events: {
         onHover: {
           enable: true,
-          mode: "grab" // لما تمرر الماوس يشد الخطوط شوي
+          mode: "grab" 
         },
         onClick: {
           enable: false
