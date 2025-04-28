@@ -93,6 +93,18 @@ window.addEventListener('DOMContentLoaded', function() {
     .then(() => { window.location.reload(); })
     .catch(error => console.error('Error!', error.message))
   })
+  const scriptURL1 = 'https://script.google.com/macros/s/AKfycbw19zN00-WaDubaDVGpzItDn_RgNPa0SAdVbf9E61ESCNdyg1zJJ_48xc8awocZVpao/exec';
+
+const form1 = document.forms['subscribe-form'];
+
+form1.addEventListener('submit', e => { 
+  e.preventDefault();
+
+  fetch(scriptURL1, { method: 'POST', body: new FormData(form1) })
+    .then(response => alert("Thank you! Form is submitted"))
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message));
+});
   tsParticles.load("particles-js", {
     fullScreen: { enable: false }, 
     background: {
