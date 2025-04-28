@@ -1153,9 +1153,9 @@ textarea.form-control {
   background: linear-gradient(145deg, #00b4d8, #00ffcc); 
   color: white;
   border: none;
-  padding: 20px; 
+  padding: 10px; 
   border-radius: 50%;
-  font-size: 28px;
+  font-size: 20px;
   cursor: pointer;
   display: none;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
@@ -1174,5 +1174,5 @@ textarea.form-control {
 }
 
 #backToTopBtn i {
-  font-size: 30px; 
+  font-size: 20px; 
 }
