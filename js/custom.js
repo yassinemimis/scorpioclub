@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
     showGroupMembers();
   
     // تعيين فترة زمنية لعرض كل مجموعة بشكل لانهائي
-    const interval = setInterval(showGroupMembers, 5000); // 5000 ميلي ثانية (5 ثواني)
+    const interval = setInterval(showGroupMembers, 3000); // 5000 ميلي ثانية (5 ثواني)
   });
   const scriptURL =                       
   "https://script.google.com/macros/s/AKfycbyuz5KrsfDveeSguHPQUyY2awF9iKS4kuTF4dIy2CC-QR8fSXDgT9SLkavyLbvdX5Fg6Q/exec";
@@ -94,4 +94,67 @@ window.addEventListener('DOMContentLoaded', function() {
       .catch((error) => {
         swal("Error", "Something went wrong. please try again!", "error");
       });
+  });
+  tsParticles.load("particles-js", {
+    fullScreen: { enable: false }, // نستخدمه داخل العنصر فقط مش كل الشاشة
+    background: {
+      color: "transparent"
+    },
+    particles: {
+      number: {
+        value: 100,
+        density: {
+          enable: true,
+          area: 800
+        }
+      },
+      color: {
+        value: "#00ffcc"
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.8
+      },
+      size: {
+        value: { min: 1, max: 3 }
+      },
+      links: {
+        enable: true,
+        distance: 250, /* ⭐ زيادة المسافة لكي تكون دائما متصلة */
+        color: "#00bbf0",
+        opacity: 0.3,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        outModes: {
+          default: "out"
+        }
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "grab" // لما تمرر الماوس يشد الخطوط شوي
+        },
+        onClick: {
+          enable: false
+        },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 300,
+          links: {
+            opacity: 0.1
+          }
+        }
+      }
+    },
+    detectRetina: true
   });
