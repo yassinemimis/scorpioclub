@@ -1146,3 +1146,33 @@ textarea.form-control {
 .gallery_section .btn-box a:hover {
   background-color: #007fa4;
 }
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(145deg, #00b4d8, #00ffcc); 
+  color: white;
+  border: none;
+  padding: 20px; 
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#backToTopBtn:hover {
+  background: linear-gradient(145deg, #00ffcc, #00b4d8); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+#backToTopBtn:active {
+  transform: scale(1.1); 
+}
+
+#backToTopBtn i {
+  font-size: 30px; 
+}
