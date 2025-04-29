@@ -570,23 +570,23 @@ a:focus {
 }
 
 /*team section */
-.team_section {
+.team_section1 {
   text-align: center;
   background-color: #00204a;
   color: #ffffff;
 }
 
-.team_section .heading_container {
+.team_section1 .heading_container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.team_section .team_container {
+.team_section1 .team_container {
   padding: 0 15px;
 }
 
-.team_section .team_container .box {
+.team_section1 .team_container .box {
   padding: 35px 0 0 0;
   border-radius: 5px;
   overflow: hidden;
@@ -597,7 +597,7 @@ a:focus {
   background: linear-gradient(to bottom, #002759, #002b64);
 }
 
-.team_section .team_container .box .img-box {
+.team_section1 .team_container .box .img-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -609,23 +609,23 @@ a:focus {
           align-items: center;
 }
 
-.team_section .team_container .box .img-box img {
+.team_section1 .team_container .box .img-box img {
   width: 120px;
   border-radius: 100%;
   border: 5px solid #ffffff;
 }
 
-.team_section .team_container .box .detail-box {
+.team_section1 .team_container .box .detail-box {
   margin: 25px 0;
 }
 
-.team_section .team_container .box .detail-box h5 {
+.team_section1 .team_container .box .detail-box h5 {
   color: #00bbf0;
   font-weight: 600;
   position: relative;
 }
 
-.team_section .team_container .box .social_box {
+.team_section1 .team_container .box .social_box {
   padding: 10px 45px 20px 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,14 +635,16 @@ a:focus {
           justify-content: space-between;
 }
 
-.team_section .team_container .box .social_box a {
+.team_section1 .team_container .box .social_box a {
   color: #ffffff;
   font-size: 22px;
 }
 
-.team_section .team_container .box .social_box a:hover {
+.team_section1 .team_container .box .social_box a:hover {
   color: #00bbf0;
 }
+
+
 
 /*team section end*/
 /* client section start */
@@ -1002,27 +1004,99 @@ z-index: 1;
     left: 0 !important;
   }
 }
-.team_section .box {
+.team_section1 .box {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
   display: none;
 }
 
-.team_section .box.visible {
+.team_section1 .box.visible {
   opacity: 1;
   transform: translateY(0);
   display: block; 
 }
 
-.team_section .box.fade-out {
+.team_section1 .box.fade-out {
   opacity: 0;
   transform: translateY(-50px); 
   display: block; 
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.team_section {
+  text-align: center;
+  background-color: #00204a;
+  color: #ffffff;
+}
 
+.team_section .heading_container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team_section .team_container {
+  padding: 0 15px;
+}
+
+.team_section .team_container .box {
+  padding: 35px 0 0 0;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  margin-top: 45px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#002759), to(#002b64));
+  background: linear-gradient(to bottom, #002759, #002b64);
+}
+
+.team_section .team_container .box .img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team_section .team_container .box .img-box img {
+  width: 120px;
+  border-radius: 100%;
+  border: 5px solid #ffffff;
+}
+
+.team_section .team_container .box .detail-box {
+  margin: 25px 0;
+}
+
+.team_section .team_container .box .detail-box h5 {
+  color: #00bbf0;
+  font-weight: 600;
+  position: relative;
+}
+
+.team_section .team_container .box .social_box {
+  padding: 10px 45px 20px 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.team_section .team_container .box .social_box a {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.team_section .team_container .box .social_box a:hover {
+  color: #00bbf0;
+}
 
 
 /* Contact Section */
