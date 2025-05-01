@@ -46,80 +46,39 @@ function myMap() {
 }
 window.addEventListener('DOMContentLoaded', function() {
   const teamBoxes = document.querySelectorAll('.team_section .box');
-  const groupSize = 4;
+  const groupSize = 4;  
   let index = 0;
-  let isMouseDown = false;
-  let startX;
-  let scrollLeft;
+
 
   function hideMembers() {
-      teamBoxes.forEach(box => {
-          box.classList.remove('visible');
-          box.style.display = 'none';
-      });
+ 
+    teamBoxes.forEach(box => {
+      box.classList.remove('visible');
+      box.style.display = 'none'; 
+    });
   }
+
 
   function showGroupMembers() {
-      hideMembers();
-      const endIndex = Math.min(index + groupSize, teamBoxes.length);
-      for (let i = index; i < endIndex; i++) {
-          teamBoxes[i].classList.add('visible');
-          teamBoxes[i].style.display = 'block';
-      }
-      index += groupSize;
+    hideMembers();  
+    const endIndex = Math.min(index + groupSize, teamBoxes.length); 
+    for (let i = index; i < endIndex; i++) {
+      teamBoxes[i].classList.add('visible');
+      teamBoxes[i].style.display = 'block'; 
+    }
+    index += groupSize;
 
-      if (index >= teamBoxes.length) {
-          index = 0;
-      }
+   
+    if (index >= teamBoxes.length) {
+      index = 0;
+    }
   }
+
 
   showGroupMembers();
 
+
   const interval = setInterval(showGroupMembers, 3000);
-
-  // Scroll on mouse down
-  const teamSection = document.querySelector('.team_section');
-
-  teamSection.addEventListener('mousedown', (e) => {
-      isMouseDown = true;
-      startX = e.pageX - teamSection.offsetLeft;
-      scrollLeft = teamSection.scrollLeft;
-  });
-
-  teamSection.addEventListener('mouseleave', () => {
-      isMouseDown = false;
-  });
-
-  teamSection.addEventListener('mouseup', () => {
-      isMouseDown = false;
-  });
-
-  teamSection.addEventListener('mousemove', (e) => {
-      if (!isMouseDown) return;
-      e.preventDefault();
-      const x = e.pageX - teamSection.offsetLeft;
-      const walk = (x - startX) * 2; // Scroll speed factor
-      teamSection.scrollLeft = scrollLeft - walk;
-  });
-
-  // Add touch events for mobile users
-  teamSection.addEventListener('touchstart', (e) => {
-      isMouseDown = true;
-      startX = e.touches[0].pageX - teamSection.offsetLeft;
-      scrollLeft = teamSection.scrollLeft;
-  });
-
-  teamSection.addEventListener('touchend', () => {
-      isMouseDown = false;
-  });
-
-  teamSection.addEventListener('touchmove', (e) => {
-      if (!isMouseDown) return;
-      e.preventDefault();
-      const x = e.touches[0].pageX - teamSection.offsetLeft;
-      const walk = (x - startX) * 2; 
-      teamSection.scrollLeft = scrollLeft - walk;
-  });
 });
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxXMOG5R2sbC4jbIYPR0O_5DsrLW_YMgCPlSYux5Zja5J0dqTb-3GsYGBp123_biO_1cg/exec'
