@@ -67,17 +67,12 @@ window.addEventListener('DOMContentLoaded', function() {
       teamBoxes[i].style.display = 'block'; 
     }
     index += groupSize;
-
-   
+    
     if (index >= teamBoxes.length) {
       index = 0;
     }
   }
-
-
   showGroupMembers();
-
-
   const interval = setInterval(showGroupMembers, 3000);
 });
 
